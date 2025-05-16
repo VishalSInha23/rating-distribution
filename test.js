@@ -1,6 +1,6 @@
 import { analyzeDistributions, ONE_STAR, TWO_STAR, THREE_STAR, FOUR_STAR, FIVE_STAR } from './rating-distribution.js'
 
-const AVERAGE_RATING = 'average rating'
+const AVERAGE_RATING = 'Average Rating'
 
 function analyzeDistributionOutput(numberOfReviews, averageRating) {
     console.log()
@@ -13,7 +13,7 @@ function analyzeDistributionOutput(numberOfReviews, averageRating) {
     const solution = analyzeDistributions(numberOfReviews, averageRating)
     console.log('Percentage rating:', solution.percentageRating + '%')
     const distributions = solution.all.map(dist => testDistribution(dist))
-    console.log('Distributions:')
+    console.log('Distributions:', solution.all.length, 'combinations')
     console.table(distributions)
     console.log('Most probable distribution:', solution.mostProbable)
     console.log('=========================')
@@ -38,3 +38,4 @@ analyzeDistributionOutput(5, 4.2)
 analyzeDistributionOutput(27, 4.0)
 analyzeDistributionOutput(19, 3.3)
 analyzeDistributionOutput(50, 5.0)
+analyzeDistributionOutput(10, 4.5)
